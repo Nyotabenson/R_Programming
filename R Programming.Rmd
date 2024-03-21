@@ -1,0 +1,222 @@
+---
+title: "R Programming"
+author: "Benson Nyota"
+date: "2024-03-21"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Programming
+
+## R Markdown presentation
+
+We will be using R Markdown for our outline
+
+R is optimized for vector operations and as well, it is an open source software
+
+### CRAN :- Comprehensive R Archive Network
+
+loading the data sets
+
+```{r}
+
+library(datasets)
+head(iris)
+```
+
+To see the summary of the data set "iris"
+
+```{r}
+summary(iris)
+```
+
+Sometimes we can even get to visualize the data directly
+
+```{r}
+plot(iris)
+```
+
+We can install one packages that carries it many packages we would need
+
+```{r}
+install.packages("pacman")
+```
+
+```{r}
+require("pacman")
+```
+
+There are two types of packages in R
+
+-   **Base Packages** - download with r (inbuilt) but not loaded o the environment
+
+-   **Contributed packages** - they must be downloaded
+
+#### To load the entire collection
+
+```{r}
+pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, ggris, lubridate, plotly, rio, rmarkdown, shiny, stringr, tidyr)
+```
+
+### Basic Graphics
+
+we can plot categorical data
+
+```{r}
+head(iris)
+```
+
+```{r}
+plot(iris$Species)
+```
+
+-   quantitative variable
+
+```{r}
+plot(iris$Petal.Length)
+```
+
+Or else plot both quantitative data
+
+```{r}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+```
+
+categorical vs quantitative
+
+```{r}
+plot(iris$Species, iris$Petal.Width, main="Species vs Petal Width")
+plot(iris$Species, iris$Petal.Length)
+```
+
+coloring the graphs
+
+```{r}
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     col = "#cc0000",
+     pch =19, #shape of the pointers for this case is circles
+     main = "Sepa Length vs Sepal Width",
+     xlab = "Sepal length fro iris dataset",
+     ylab = "sepal width from iris dataset")
+```
+
+### Bar charts
+
+we use mtcars as our datset
+
+```{r}
+head(mtcars)
+```
+
+```{r}
+summary(mtcars)
+```
+
+Number of rows
+
+```{r}
+paste(nrow(mtcars), "rows")
+```
+
+Number of columns
+
+```{r}
+paste(ncol(mtcars), "Columns")
+```
+
+```{r}
+str(mtcars)
+```
+
+Factoring the vs column
+
+```{r}
+mtcars$vs <- factor(mtcars$vs)
+```
+
+```{r}
+
+#This is more of like counting distinct to create a table 
+cylinders <- table(mtcars$cyl)
+
+barplot(cylinders)
+```
+
+### Histogram
+
+```{r}
+hist(iris$Sepal.Length)
+```
+
+```{r}
+hist(iris$Sepal.Width,
+     main="Sepal Width Histogram")
+```
+
+Iris data
+
+```{r}
+summary(iris$Species)
+```
+
+We can arrange the graphs into different rows and columns
+
+```{r}
+par(mfrow = c(3,1)) #3 rows and 1 columns
+#plot histogram for each species
+
+hist(iris$Petal.Width [iris$Species=="setosa"], 
+     xlim = c(0,3),
+     breaks = 9,
+     main = "Petal Width for Setosa",
+     xlab = "Petal Width",
+     col ="green")
+
+hist(iris$Petal.Width [iris$Species=="versicolor"], 
+     xlim = c(0,3), #xlim?
+     breaks = 9,
+     main = "Petal Width for Versicolor",
+     xlab = "Petal Width",
+     col = "red")
+
+hist(iris$Petal.Width [iris$Species=="virginica"], 
+     xlim = c(0,3),
+     breaks = 9,
+     main = "Petal Width for Virginica",
+     xlab = "Petal Width",
+     col = "blue")
+```
+
+Restoring the graphics parameters
+
+```{r}
+par(mfrow=c(1,1))
+```
+
+### Scatter plot
+
+This case you are plotting between two quantitative variables
+
+```{r}
+plot(mtcars$wt, mtcars$mpg,
+     main = "MTCARS",
+     xlab ="Weights",
+     ylab ="mpg")
+```
+
+adding some more plots
+
+```{r}
+plot(mtcars$wt, mtcars$mpg,
+     pch =19,
+     cex = 1.5, #circumference of the circle
+     col = "violet",
+     main = "MTCARS",
+     xlab ="Weights",
+     ylab ="mpg")
+```

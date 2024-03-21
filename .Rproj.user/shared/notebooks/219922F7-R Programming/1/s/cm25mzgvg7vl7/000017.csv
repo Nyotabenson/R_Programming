@@ -1,0 +1,7 @@
+"0","plot(mtcars$wt, mtcars$mpg,"
+"0","     pch =19,"
+"0","     cex = 1.5, #circumference of the circle"
+"0","     col = ""violet"","
+"0","     main = ""MTCARS"","
+"0","     xlab =""Weights"","
+"0","     ylab =""mpg"")"

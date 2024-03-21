@@ -1,0 +1,7 @@
+"0",""
+"0","hist(iris$Petal.Width [iris$Species==""virginica""], "
+"0","     xlim = c(0,3),"
+"0","     breaks = 9,"
+"0","     main = ""Petal Width for Virginica"","
+"0","     xlab = ""Petal Width"","
+"0","     col = ""blue"")"

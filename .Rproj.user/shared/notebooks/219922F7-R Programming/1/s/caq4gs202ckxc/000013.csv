@@ -1,0 +1,6 @@
+"0","plot(iris$Sepal.Length, iris$Sepal.Width,"
+"0","     col = ""#cc0000"","
+"0","     pch =19, #shape of the pointers for this case is circles"
+"0","     main = ""Sepa Length vs Sepal Width"","
+"0","     xlab = ""Sepal length fro iris dataset"","
+"0","     ylab = ""sepal width from iris dataset"")"
