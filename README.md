@@ -8,3 +8,14 @@ It covers various key aspects to equip learners with a solid understanding of R,
 - Installing and utilizing contributed packages
 - Data manipulation techniques
 - Data visualization methods
+- Overlaying plots
+- Basic statistics
+- Selection cases and filtering
+- Accessing data
+- Data entry and importation
+- Modelling
+- Principal Component
+- Regression
+- Many other models
+
+Published on RPubs : https://rpubs.com/BensonNyota/1164368
